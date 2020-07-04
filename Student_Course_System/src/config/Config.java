@@ -21,7 +21,7 @@ public class Config implements Serializable {
     }
 
     public static void readFromFile()  {
-       Object obj= FileUtility.readFileDeserialize("sc.txt");
+       Object obj= FileUtility.readFileDeserialize("Student_Course_Info.txt");
 
        if (obj ==null){
            return;

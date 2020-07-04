@@ -27,14 +27,13 @@ public class Menu {
                     break;
                 case 2: StudentOperation.showAllStudents();
                     break;
-                case 3:
+                case 3:StudentOperation.searchStudentById();
                     break;
-
                 case 4:
                     welcomePage();
                     break;
                 case 5:
-                    return;
+                    System.exit(5);
                 default:
                     System.out.println("Please, enter 1 , 2, 3, 4, o 5 ");
                     break;
@@ -73,7 +72,7 @@ public class Menu {
                     welcomePage();
                     break;
                 case 5:
-                    return;
+                    System.exit(5);
                 default:
                     System.out.println("Please, enter 1 , 2, 3 ,4, or 5");
                     break;
@@ -86,6 +85,7 @@ public class Menu {
         System.out.println("Welcome to Student and Course management System");
         System.out.println("Press 1 to go Student Operation");
         System.out.println("Press 2 to go Course Operation");
+        System.out.println("Press 3 : To exit From System");
 
         Scanner sc = new Scanner(System.in);
         int choice;
@@ -98,6 +98,9 @@ public class Menu {
                     break;
                 case 2: courseMainMenu();
                     break;
+
+                case 3:
+                    System.exit(3);
                 default:
                     System.out.println("Please, enter 1 or 2");
                     break;

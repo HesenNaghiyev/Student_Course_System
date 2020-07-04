@@ -35,7 +35,7 @@ public class CourseOperation {
             System.out.println(course);
             System.err.println("Successfully Added");
 
-            FileUtility.writeObjectIntoFile(Config.createInstance(),"sc.txt");
+            FileUtility.writeObjectIntoFile(Config.createInstance(),"Student_Course_Info.txt");
 
         }
         Menu.courseMainMenu();
