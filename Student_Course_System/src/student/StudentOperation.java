@@ -2,6 +2,7 @@ package student;
 
 import bean.Student;
 import config.Config;
+import file.FileUtility;
 import menu.Menu;
 
 import java.util.Scanner;
@@ -9,7 +10,7 @@ import java.util.Scanner;
 public class StudentOperation {
 
 
-    public static void appendStudent() {
+    public static void appendStudent() throws Exception {
 
           System.out.println("How Many Student you want to add");
           Scanner scanner1 = new Scanner(System.in);
@@ -40,16 +41,20 @@ public class StudentOperation {
             Config.createInstance().addStudent(student);
             System.out.println(student);
             System.err.println("Successfully Added");
+               FileUtility.writeObjectIntoFile(Config.createInstance(),"sc.txt");
 
         }
         Menu.studentMainMenu();
     }
 
-    public static  void showAllStudents(){
+
+
+    public static  void showAllStudents() throws Exception {
         Config config =Config.createInstance();
         for (int i=0; i<config.getStudents().length; i++){
             System.out.println(config.getStudents()[i]);
         }
         Menu.studentMainMenu();
     }
+
 }

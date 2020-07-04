@@ -1,7 +1,7 @@
 package bean;
 
 public class Student extends Person {
-
+    private static final long serialVersionUID = 1L;
     private int Id;
 
     private double gpa;

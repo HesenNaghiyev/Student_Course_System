@@ -2,19 +2,33 @@ package config;
 
 import bean.Course;
 import bean.Student;
+import file.FileUtility;
 
-public class Config {
+import java.io.Serializable;
+
+public class Config implements Serializable {
 
     public static Config config;
 
-    private Student[] students =new Student[0];
-    private   Course [] courses=new Course[0];
+    private Student[]  students=new Student[0];
+    private  Course [] courses=new Course[0];
 
     public static Config createInstance(){
         if (config==null){
             config=new Config();
         }
         return config;
+    }
+
+    public static void readFromFile()  {
+       Object obj= FileUtility.readFileDeserialize("sc.txt");
+
+       if (obj ==null){
+           return;
+       }
+       if (obj instanceof Config){
+           config=(Config)obj;
+       }
     }
 
     public  void addStudent(Student s){
